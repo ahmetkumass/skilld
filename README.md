@@ -1,8 +1,8 @@
 # skilld
 
-**Your agent's memory, with receipts.**
+**Memory tools help your agent remember. skilld makes it learn.**
 
-Every correction you've ever given your AI coding agent — *"we use vitest here"*, *"stop writing filler"*, *"never overwrite, version the file"* — is sitting in transcript files on your disk, forgotten. skilld mines those transcripts, shows you what you taught with your own words as proof, and makes every lesson permanent across all your tools.
+I found out I had told my coding agent *"stop writing filler"* six separate times — the proof was sitting in my own transcripts. Every correction you give your agent is recorded on your disk and then forgotten. skilld mines those transcripts, shows you each lesson with your own words as evidence, and — once you approve — makes it permanent across all your tools.
 
 Free. MIT. Local-first. No account, no cloud, no telemetry.
 
@@ -31,17 +31,21 @@ This gives you `/skilld:scan`, `/skilld:review` and `/skilld:status` right insid
 
 ## How it's different
 
-Agent memory exists — but it's silent, siloed, and locked in. skilld is the opposite:
+**Memory tools help your agent remember. skilld makes it learn.**
 
-| | Claude Code auto-memory | SpecStory | rulesync & co. | **skilld** |
-|---|:---:|:---:|:---:|:---:|
-| Mines your existing history | – | partial | – | **yes** |
-| Shows evidence, you approve | – | – | – | **yes** |
-| Lessons cross projects | – | – | – | **yes** |
-| Works across tools (Claude, Codex, Cursor...) | – | – | yes | **yes** |
-| No account required | yes | – | yes | **yes** |
+Tools like claude-mem and Claude Code's built-in auto-memory record *what happened* and inject summaries back as context. Useful — but your agent's behavior doesn't change, and notes keep piling up. skilld closes a learning loop instead: your corrections become a small set of approved skill files that change *how* the agent works. Notes accumulate; skills compound.
 
-The one-line version: other tools either *silently* remember (you can't see, audit, or move what they learned) or make you *write rules by hand*. skilld turns what you already taught into rules you can read, prove, and carry anywhere.
+| | claude-mem | auto-memory (built-in) | SpecStory | rulesync & co. | **skilld** |
+|---|---|---|---|---|---|
+| Core job | remember sessions | notes Claude keeps for itself | save chats, derive Cursor rules | sync rules you write by hand | **learn your preferences** |
+| Output | context injected each session | memory files per project | `.cursor/rules` file | converted rule files | **skill files that change behavior** |
+| Mines your existing history | – | – | only its own saved chats | – | **yes, all of it** |
+| Evidence + your approval before saving | – | – | – | you author them | **yes — your own quotes** |
+| Lessons cross projects | per project | per project | per repo | manual | **yes, by domain** |
+| Compiles to multiple tools (skills, AGENTS.md, Cursor, Copilot) | – | – | Cursor only | yes | **yes** |
+| Local-first, no account | yes | yes | – | yes | **yes** |
+
+To be fair: if you want your agent to recall *what you were doing last session*, use a memory tool — they're good at that. If you want it to *stop making the same mistakes*, that's skilld. They compose fine; different jobs.
 
 ## How it works
 
