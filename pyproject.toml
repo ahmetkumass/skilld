@@ -1,0 +1,23 @@
+[project]
+name = "skilld"
+version = "0.1.0"
+description = "Distill reusable skills from your AI agent transcripts — every lesson you taught your agent, made permanent."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ahmet Kumas" }]
+keywords = ["ai", "agents", "claude", "skills", "transcripts", "memory"]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["anthropic"]
+
+[project.scripts]
+skilld = "skilld.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["skilld*"]
