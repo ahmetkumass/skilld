@@ -11,9 +11,10 @@ Free. MIT. Local-first. No account, no cloud, no telemetry.
 ## Quick start
 
 ```bash
-pip install -e .            # PyPI release coming
-skilld scan --all           # mine your transcript history
-skilld review               # approve lessons in your browser (a / r keys)
+git clone https://github.com/ahmetkumass/skilld.git
+cd skilld && pip install .   # PyPI release coming
+skilld scan --all            # mine your transcript history
+skilld review                # approve lessons in your browser (a / r keys)
 ```
 
 That's it. Approved lessons are written to every tool skilld detects. Your next session starts already knowing them.
