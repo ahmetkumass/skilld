@@ -28,15 +28,19 @@ def encode_path(path) -> str:
 
 
 def list_projects(name_filter: str | None = None):
-    """Yield project directories, optionally filtered by substring."""
+    """Yield project directories filtered by name.
+
+    An exact directory-name match wins over substring matching — without this,
+    a filter like "-Users-me" (the home project) would match every project,
+    since all encoded names share that prefix.
+    """
     if not ROOT.exists():
         return
-    for d in sorted(ROOT.iterdir()):
-        if not d.is_dir():
-            continue
-        if name_filter and name_filter not in d.name:
-            continue
-        yield d
+    dirs = [d for d in sorted(ROOT.iterdir()) if d.is_dir()]
+    if name_filter:
+        exact = [d for d in dirs if d.name == name_filter]
+        dirs = exact if exact else [d for d in dirs if name_filter in d.name]
+    yield from dirs
 
 
 def list_sessions(project_dir: Path):
