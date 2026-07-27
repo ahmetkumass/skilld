@@ -17,6 +17,16 @@ _SKIP_PREFIXES = (
 MAX_MSG_CHARS = 900  # long pastes (docs, logs) are truncated; the head carries the intent
 
 
+def encode_path(path) -> str:
+    """Claude Code's directory encoding: every non-alphanumeric char becomes '-'.
+
+    /Users/x/my_app -> -Users-x-my-app
+    """
+    import re
+
+    return re.sub(r"[^A-Za-z0-9]", "-", str(path))
+
+
 def list_projects(name_filter: str | None = None):
     """Yield project directories, optionally filtered by substring."""
     if not ROOT.exists():

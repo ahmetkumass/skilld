@@ -10,6 +10,9 @@ from . import __version__, adapters, apply as apply_mod, distill, report, signal
 def cmd_scan(args):
     adapter = adapters.get(args.agent)
     state = store.load()
+    if getattr(args, "here", False) and not args.project:
+        args.project = adapter.encode_path(Path.cwd())
+        print(f"Scanning current project: {args.project}")
     if not args.project and not getattr(args, "all", False):
         print("Pick a scope: skilld scan --project <substring>  (or --all)")
         projects = list(adapter.list_projects())
@@ -240,6 +243,7 @@ def main(argv=None):
     ps = sub.add_parser("scan", help="scan transcripts, propose lesson candidates")
     ps.add_argument("--agent", default="claude-code", help="transcript source (default: claude-code)")
     ps.add_argument("--project", help="only projects whose name contains this substring")
+    ps.add_argument("--here", action="store_true", help="scan the project for the current directory")
     ps.add_argument("--all", action="store_true", help="scan every project")
     ps.add_argument("--force", action="store_true", help="rescan already-scanned sessions")
     ps.set_defaults(func=cmd_scan)
