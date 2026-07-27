@@ -1,0 +1,13 @@
+{
+  "name": "skilld",
+  "description": "Your agent's memory, with receipts. Mine your transcripts into approved, portable skills — /skilld:scan, /skilld:review, and an optional session-end auto-scan.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ahmet Kumas",
+    "url": "https://github.com/ahmetkumass"
+  },
+  "homepage": "https://github.com/ahmetkumass/skilld",
+  "repository": "https://github.com/ahmetkumass/skilld",
+  "license": "MIT",
+  "keywords": ["memory", "skills", "transcripts", "agents-md", "preferences"]
+}

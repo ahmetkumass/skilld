@@ -19,6 +19,16 @@ skilld review                # approve lessons in your browser (a / r keys)
 
 That's it. Approved lessons are written to every tool skilld detects. Your next session starts already knowing them.
 
+**Or use it as a Claude Code plugin** — inside Claude Code:
+
+```
+/plugin marketplace add ahmetkumass/skilld
+/plugin install skilld@skilld
+/reload-plugins
+```
+
+This gives you `/skilld:scan`, `/skilld:review` and `/skilld:status` right inside Claude Code, plus an optional session-end hook that scans quietly after every session — no scheduler needed. (The plugin drives the CLI, so install it once with `pip install skilld`.)
+
 ## How it's different
 
 Agent memory exists — but it's silent, siloed, and locked in. skilld is the opposite:

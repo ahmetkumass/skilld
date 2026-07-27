@@ -1,0 +1,15 @@
+{
+  "description": "After each session ends, quietly scan new transcripts for lesson candidates. Notifies only when enough pile up. No-op if the skilld CLI is not installed.",
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'command -v skilld >/dev/null 2>&1 && nohup skilld cron >> \"$HOME/.skilld/cron.log\" 2>&1 & exit 0'"
+          }
+        ]
+      }
+    ]
+  }
+}

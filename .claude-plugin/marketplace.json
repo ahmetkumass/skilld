@@ -1,0 +1,14 @@
+{
+  "name": "skilld",
+  "owner": {
+    "name": "Ahmet Kumas",
+    "url": "https://github.com/ahmetkumass"
+  },
+  "plugins": [
+    {
+      "name": "skilld",
+      "source": "./",
+      "description": "Your agent's memory, with receipts. Mine your transcripts into approved, portable skills."
+    }
+  ]
+}
